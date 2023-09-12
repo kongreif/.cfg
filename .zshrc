@@ -105,9 +105,6 @@ alias vi='nvim'
 alias vim='nvim'
 alias psql='/Library/PostgreSQL/15/bin/psql -U postgres'
 
-export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/homebrew/bin:/opt/homebrew/bin
-eval "$(rbenv init - zsh)"
-
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
