@@ -3,6 +3,7 @@
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
+export PATH=$HOME/coding/dev/bin:$PATH
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -105,7 +106,7 @@ alias vi='nvim'
 alias vim='nvim'
 alias view="nvim -R"
 alias vimdiff="nvim -d"
-alias psql='/Library/PostgreSQL/15/bin/psql -U postgres'
+# alias psql='/Library/PostgreSQL/15/bin/psql -U postgres'
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -113,3 +114,5 @@ export NVM_DIR="$HOME/.nvm"
 
 bindkey "^[^[[C" forward-word
 bindkey "^[^[[D" backward-word
+
+eval "$(shadowenv init zsh)"
