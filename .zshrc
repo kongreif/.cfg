@@ -103,6 +103,10 @@ source $ZSH/oh-my-zsh.sh
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 alias vi='nvim'
 alias vim='nvim'
+=======
+alias view="nvim -R"
+alias vimdiff="nvim -d"
+alias psql='/Library/PostgreSQL/15/bin/psql -U postgres'
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
