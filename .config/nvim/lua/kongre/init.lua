@@ -40,8 +40,7 @@ require("lazy").setup({
   { "neoclide/coc.nvim", branch = "release" },
   "yaegassy/coc-volar",
   "yaegassy/coc-volar-tools",
-  "github/copilot.vim"
+  "github/copilot.vim",
 })
 
 require('lualine').setup()
-
