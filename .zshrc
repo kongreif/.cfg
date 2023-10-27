@@ -118,3 +118,6 @@ bindkey "^[^[[D" backward-word
 eval "$(shadowenv init zsh)"
 export PATH=~/Android/Sdk/tools:$PATH
 export PATH=~/Android/Sdk/platform-tools:$PATH
+
+export EDITOR='nvim'
+export BUNDLER_EDITOR='nvim'
