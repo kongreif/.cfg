@@ -16,13 +16,13 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
   {
-  'projekt0n/github-nvim-theme',
-  lazy = false, -- make sure we load this during startup if it is your main colorscheme
-  priority = 1000, -- make sure to load this before all the other start plugins
-  config = function()
-    require('github-theme').setup({})
-    vim.cmd('colorscheme github_dark')
-  end,
+    'projekt0n/github-nvim-theme',
+    lazy = false, -- make sure we load this during startup if it is your main colorscheme
+    priority = 1000, -- make sure to load this before all the other start plugins
+    config = function()
+      require('github-theme').setup({})
+      vim.cmd('colorscheme github_dark')
+    end,
   },
   "nvim-lua/plenary.nvim",
   "BurntSushi/ripgrep",
@@ -30,6 +30,17 @@ require("lazy").setup({
   "nvim-treesitter/nvim-treesitter",
   "mbbill/undotree",
   "theprimeagen/harpoon",
+  {
+    'jakewvincent/mkdnflow.nvim',
+    config = function()
+      require('mkdnflow').setup({
+        perspective = {
+          priority = 'root',
+          root_tell = 'index.md'
+        }
+      })
+    end
+  },
   "nvim-tree/nvim-web-devicons",
   "nvim-lualine/lualine.nvim",
   "tpope/vim-fugitive",
@@ -45,3 +56,5 @@ require("lazy").setup({
 })
 
 require('lualine').setup()
+
+vim.api.nvim_create_autocmd("FileType", {pattern = "markdown", command = "set awa"})

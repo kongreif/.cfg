@@ -114,3 +114,6 @@ export NVM_DIR="$HOME/.nvm"
 
 bindkey "^[^[[C" forward-word
 bindkey "^[^[[D" backward-word
+
+# Necessary for frum ruby installer
+eval "$(frum init)"
