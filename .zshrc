@@ -3,6 +3,7 @@
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
+export PATH=$HOME/coding/dev/bin:$PATH
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -103,10 +104,9 @@ source $ZSH/oh-my-zsh.sh
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 alias vi='nvim'
 alias vim='nvim'
-alias psql='/Library/PostgreSQL/15/bin/psql -U postgres'
-
-export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/homebrew/bin:/opt/homebrew/bin
-eval "$(rbenv init - zsh)"
+alias view="nvim -R"
+alias vimdiff="nvim -d"
+# alias psql='/Library/PostgreSQL/15/bin/psql -U postgres'
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -117,3 +117,9 @@ bindkey "^[^[[D" backward-word
 
 # Necessary for frum ruby installer
 eval "$(frum init)"
+eval "$(shadowenv init zsh)"
+export PATH=~/Android/Sdk/tools:$PATH
+export PATH=~/Android/Sdk/platform-tools:$PATH
+
+export EDITOR='nvim'
+export BUNDLER_EDITOR='nvim'

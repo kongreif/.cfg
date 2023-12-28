@@ -26,7 +26,7 @@ require("lazy").setup({
   },
   "nvim-lua/plenary.nvim",
   "BurntSushi/ripgrep",
-  "nvim-telescope/telescope.nvim",
+  { "nvim-telescope/telescope.nvim", branch = "0.1.x" },
   "nvim-treesitter/nvim-treesitter",
   "mbbill/undotree",
   "theprimeagen/harpoon",
@@ -46,13 +46,12 @@ require("lazy").setup({
   "tpope/vim-fugitive",
   "tpope/vim-rails",
   "vim-test/vim-test",
-  "neovim/nvim-lspconfig",
   "hrsh7th/nvim-compe",
   "hrsh7th/vim-vsnip",
   { "neoclide/coc.nvim", branch = "release" },
   "yaegassy/coc-volar",
   "yaegassy/coc-volar-tools",
-  "github/copilot.vim"
+  "github/copilot.vim",
 })
 
 require('lualine').setup()

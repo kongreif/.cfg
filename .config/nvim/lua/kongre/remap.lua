@@ -24,6 +24,9 @@ vim.keymap.set("n", "<leader>Y", "\"+Y")
 --toggle between relative and absolute line numbers
 vim.keymap.set("n", "<leader>ln", ":set relativenumber!<CR>")
 
+--toggle between highlight search and no highlight
+vim.keymap.set("n", "<leader>hl", ":set hlsearch!<CR>")
+
 vim.keymap.set("i", "<C-c>", "<Esc>")
 
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
