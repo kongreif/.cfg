@@ -62,5 +62,13 @@ require('tokyonight').setup({
   style = 'night',
 })
 
+require("tokyonight").setup({
+  transparent = true,
+  styles = {
+    sidebars = "dark",
+    floats = "dark"
+  }
+})
+
 vim.cmd[[colorscheme tokyonight]]
 vim.api.nvim_create_autocmd("FileType", {pattern = "markdown", command = "set awa"})
