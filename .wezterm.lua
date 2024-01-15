@@ -1,6 +1,8 @@
 -- Pull in the wezterm API
 local wezterm = require 'wezterm'
 
+local username = os.getenv("USER") or os.getenv("USERNAME")
+
 -- Multiplexer module
 local mux = wezterm.mux
 
@@ -40,7 +42,7 @@ config.keys = {
 -- Background image
 if wezterm.target_triple:find("darwin") then
   -- macOS path
-  background_image_path = "/Users/konnislove/wezterm_background/mount_fuji.jpg"
+  background_image_path = "/Users/" .. username .. "/wezterm_background/mount_fuji.jpg"
 else
   -- Linux path
   background_image_path = "/home/kon/wezterm_background/mount_fuji.jpg"
