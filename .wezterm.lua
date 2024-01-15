@@ -25,10 +25,10 @@ end)
 -- Color scheme
 config.color_scheme = 'tokyonight_night'
 
--- Close confirmaion
+-- Disable close confirmaion
 config.window_close_confirmation = 'NeverPrompt'
 
--- Close tab confirmation
+-- Disable close tab confirmation
 config.keys = {
   {
     key = 'w',
