@@ -22,12 +22,19 @@ alias gsw='git switch'
 alias gswc='git switch -c'
 alias gswm='git switch main'
 
+# Rails remaps
+alias be='bundle exec'
+
 # Unix remaps
 alias la='ls -la --color=auto'
-
-export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/homebrew/bin:/opt/homebrew/bin
-eval "$(rbenv init - zsh)"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+if [[ "$(uname -s)" == "Darwin" ]]; then
+  # Chruby setup for MacOS
+  source /opt/homebrew/opt/chruby/share/chruby/chruby.sh
+  source /opt/homebrew/opt/chruby/share/chruby/auto.sh
+elif [[ "$(uname -s)" == "Linux" ]]; then
+fi
