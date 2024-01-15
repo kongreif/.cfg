@@ -54,6 +54,7 @@ require("lazy").setup({
   { "neoclide/coc.nvim", branch = "release" },
   { 'echasnovski/mini.pairs', version = false },
   { 'echasnovski/mini.comment', version = false },
+  'JoosepAlviste/nvim-ts-context-commentstring',
   "yaegassy/coc-volar",
   "yaegassy/coc-volar-tools",
   "github/copilot.vim",
@@ -77,3 +78,6 @@ require('mini.comment').setup()
 
 vim.cmd[[colorscheme tokyonight]]
 vim.api.nvim_create_autocmd("FileType", {pattern = "markdown", command = "set awa"})
+
+-- Skip backwards compatibility routines and speed up loading.
+vim.g.skip_ts_context_commentstring_module = true
