@@ -43,6 +43,7 @@ require("lazy").setup({
    dependencies = { "nvim-tree/nvim-web-devicons" },
    opts = {
    },
+   -- TODO: Add keymaps and workflow for uses
   },
   "nvim-tree/nvim-web-devicons",
   "nvim-lualine/lualine.nvim",
@@ -61,6 +62,13 @@ require("lazy").setup({
     config = function()
       vim.g.startuptime_tries = 10
     end,
+  },
+  {
+    "folke/todo-comments.nvim",
+    dependencies = { "nvim-lua/plenary.nvim" },
+    opts = {
+    }
+    -- TODO: Add keymaps
   },
   "yaegassy/coc-volar",
   "yaegassy/coc-volar-tools",
@@ -88,3 +96,5 @@ vim.api.nvim_create_autocmd("FileType", {pattern = "markdown", command = "set aw
 
 -- Skip backwards compatibility routines and speed up loading.
 vim.g.skip_ts_context_commentstring_module = true
+
+-- TODO: Add indent-blankline.nvim
