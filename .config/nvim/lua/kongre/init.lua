@@ -55,6 +55,13 @@ require("lazy").setup({
   { 'echasnovski/mini.pairs', version = false },
   { 'echasnovski/mini.comment', version = false },
   'JoosepAlviste/nvim-ts-context-commentstring',
+  {
+    "dstein64/vim-startuptime",
+    cmd = "StartupTime",
+    config = function()
+      vim.g.startuptime_tries = 10
+    end,
+  },
   "yaegassy/coc-volar",
   "yaegassy/coc-volar-tools",
   "github/copilot.vim",
