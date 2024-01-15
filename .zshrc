@@ -32,9 +32,16 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
+# OS based setup
 if [[ "$(uname -s)" == "Darwin" ]]; then
   # Chruby setup for MacOS
   source /opt/homebrew/opt/chruby/share/chruby/chruby.sh
   source /opt/homebrew/opt/chruby/share/chruby/auto.sh
 elif [[ "$(uname -s)" == "Linux" ]]; then
+fi
+
+# Work related setup
+if [[ "$(hostname)" == "DG097MAC.fritz.box" ]];then
+  export PATH=$HOME/coding/dev/bin:$PATH
+  eval "$(shadowenv init zsh)"
 fi
