@@ -53,6 +53,7 @@ require("lazy").setup({
   "hrsh7th/vim-vsnip",
   { "neoclide/coc.nvim", branch = "release" },
   { 'echasnovski/mini.pairs', version = false },
+  { 'echasnovski/mini.comment', version = false },
   "yaegassy/coc-volar",
   "yaegassy/coc-volar-tools",
   "github/copilot.vim",
@@ -72,6 +73,7 @@ require("tokyonight").setup({
 })
 
 require('mini.pairs').setup()
+require('mini.comment').setup()
 
 vim.cmd[[colorscheme tokyonight]]
 vim.api.nvim_create_autocmd("FileType", {pattern = "markdown", command = "set awa"})
