@@ -55,6 +55,7 @@ require("lazy").setup({
   "yaegassy/coc-volar",
   "yaegassy/coc-volar-tools",
   "github/copilot.vim",
+  { dir = "~/coding/code-palette.nvim" },
 })
 
 require('lualine').setup()
