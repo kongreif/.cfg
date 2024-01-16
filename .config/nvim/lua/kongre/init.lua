@@ -131,17 +131,6 @@ require("lazy").setup({
       delete_check_events = "TextChanged",
     },
     -- stylua: ignore
-    keys = {
-      {
-        "<tab>",
-        function()
-          return require("luasnip").jumpable(1) and "<Plug>luasnip-jump-next" or "<tab>"
-        end,
-        expr = true, silent = true, mode = "i",
-      },
-      { "<tab>", function() require("luasnip").jump(1) end, mode = "s" },
-      { "<s-tab>", function() require("luasnip").jump(-1) end, mode = { "i", "s" } },
-    },
   },
   { 'echasnovski/mini.pairs', version = false },
   { 'echasnovski/mini.comment', version = false },
@@ -189,8 +178,6 @@ vim.g.skip_ts_context_commentstring_module = true
 
 -- TODO: Maybe add nvim-notify
 -- TODO: Add which-key.nvim
--- TODO: Add snippets via LuaSnip, friendliy-snippets, 
--- TODO: Add full completion support with nvim-cmp, cmp-nvim-lsp, cmp-buffer, cmp-path, cmp_luasnip
 -- TODO: Add nvim-spectre
 -- TODO: Add way to check gitblame
 -- TODO: Remove unnecessary testing and git packages
