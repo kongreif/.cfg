@@ -70,7 +70,7 @@ require("lazy").setup({
     dependencies = { "nvim-lua/plenary.nvim" },
     opts = {
     }
-    -- TODO: Add keymaps
+    -- TODO: Add keymaps for showing in current opened project
   },
   "yaegassy/coc-volar",
   "yaegassy/coc-volar-tools",
@@ -102,3 +102,12 @@ vim.api.nvim_create_autocmd("FileType", {pattern = "markdown", command = "set aw
 vim.g.skip_ts_context_commentstring_module = true
 
 -- TODO: Add indent-blankline.nvim
+-- TODO: Maybe add nvim-notify
+-- TODO: Add which-key.nvim
+-- TODO: Add snippets via LuaSnip, friendliy-snippets, 
+-- TODO: Add full completion support with nvim-cmp, cmp-nvim-lsp, cmp-buffer, cmp-path, cmp_luasnip
+-- TODO: Add nvim-spectre
+-- TODO: Add way to check gitblame
+-- TODO: Remove unnecessary testing and git packages
+-- TODO: Add formatting via conform.nvim and rubocop (ideally based on .rubocop)
+-- TODO: Add linting via nvim-lint
