@@ -1,6 +1,8 @@
 -- Pull in the wezterm API
 local wezterm = require 'wezterm'
 
+local username = os.getenv("USER") or os.getenv("USERNAME")
+
 -- Multiplexer module
 local mux = wezterm.mux
 
@@ -22,8 +24,43 @@ wezterm.on('gui-startup', function()
  window:gui_window():maximize()
 end)
 
--- For example, changing the color scheme:
+-- Color scheme
 config.color_scheme = 'tokyonight_night'
 
--- and finally, return the configuration to wezterm
+-- Disable close confirmaion
+config.window_close_confirmation = 'NeverPrompt'
+
+-- Disable close tab confirmation
+config.keys = {
+  {
+    key = 'w',
+    mods = 'CMD',
+    action = wezterm.action.CloseCurrentTab { confirm = false },
+  },
+}
+
+-- Background image
+if wezterm.target_triple:find("darwin") then
+  -- macOS path
+  background_image_path = "/Users/" .. username .. "/wezterm_background/mount_fuji.jpg"
+else
+  -- Linux path
+  background_image_path = "/home/kon/wezterm_background/mount_fuji.jpg"
+end
+
+config.background = {
+  {
+    source = {
+      File = background_image_path
+    },
+    hsb = {
+      saturation = 1.0,
+      brightness = 0.01
+    },
+    horizontal_align = 'Center',
+    vertical_align = 'Middle'
+  }
+}
+
+-- return the configuration to wezterm
 return config
