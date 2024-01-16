@@ -21,6 +21,7 @@ require("lazy").setup({
     priority = 1000,
     opts = {},
   },
+  -- Snippets, dependency for other plugins
   "nvim-lua/plenary.nvim",
   "BurntSushi/ripgrep",
   { "nvim-telescope/telescope.nvim", branch = "0.1.x" },
@@ -49,12 +50,7 @@ require("lazy").setup({
   },
   "nvim-tree/nvim-web-devicons",
   "nvim-lualine/lualine.nvim",
-  "tpope/vim-fugitive",
-  "tpope/vim-rails",
-  "vim-test/vim-test",
-  "hrsh7th/nvim-compe",
   "hrsh7th/vim-vsnip",
-  { "neoclide/coc.nvim", branch = "release" },
   { 'echasnovski/mini.pairs', version = false },
   { 'echasnovski/mini.comment', version = false },
   'JoosepAlviste/nvim-ts-context-commentstring',
@@ -72,8 +68,6 @@ require("lazy").setup({
     }
     -- TODO: Add keymaps for showing in current opened project
   },
-  "yaegassy/coc-volar",
-  "yaegassy/coc-volar-tools",
   "github/copilot.vim",
   { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} }
 })
@@ -86,7 +80,7 @@ require('tokyonight').setup({
 require("tokyonight").setup({
   transparent = true,
   styles = {
-    sidebars = "dark",
+    sidebars = "transparent",
     floats = "dark"
   }
 })
@@ -101,7 +95,6 @@ vim.api.nvim_create_autocmd("FileType", {pattern = "markdown", command = "set aw
 -- Skip backwards compatibility routines and speed up loading.
 vim.g.skip_ts_context_commentstring_module = true
 
--- TODO: Add indent-blankline.nvim
 -- TODO: Maybe add nvim-notify
 -- TODO: Add which-key.nvim
 -- TODO: Add snippets via LuaSnip, friendliy-snippets, 
