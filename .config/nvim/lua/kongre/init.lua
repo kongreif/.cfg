@@ -73,6 +73,7 @@ require("lazy").setup({
   "yaegassy/coc-volar",
   "yaegassy/coc-volar-tools",
   "github/copilot.vim",
+  { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} }
 })
 
 require('lualine').setup()
@@ -90,6 +91,7 @@ require("tokyonight").setup({
 
 require('mini.pairs').setup()
 require('mini.comment').setup()
+require("ibl").setup()
 
 vim.cmd[[colorscheme tokyonight]]
 vim.api.nvim_create_autocmd("FileType", {pattern = "markdown", command = "set awa"})
