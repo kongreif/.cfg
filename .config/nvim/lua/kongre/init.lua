@@ -149,7 +149,29 @@ require("lazy").setup({
     }
     -- TODO: Add keymaps for showing in current opened project
   },
-  "github/copilot.vim",
+  {
+    "zbirenbaum/copilot.lua",
+    cmd = "Copilot",
+    build = ":Copilot auth",
+    opts = {
+      suggestion = {
+        auto_trigger = true,
+        key_map = {
+          accept = "<C-CR>",
+        },
+      },
+      panel = { enabled = false },
+    },
+  },
+  {
+    "zbirenbaum/copilot-cmp",
+    dependencies = "copilot.lua",
+    opts = {},
+    config = function(_, opts)
+      local copilot_cmp = require("copilot_cmp")
+      copilot_cmp.setup(opts)
+    end,
+  },
   { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} }
 })
 
@@ -180,6 +202,5 @@ vim.g.skip_ts_context_commentstring_module = true
 -- TODO: Add which-key.nvim
 -- TODO: Add nvim-spectre
 -- TODO: Add way to check gitblame
--- TODO: Remove unnecessary testing and git packages
 -- TODO: Add formatting via conform.nvim and rubocop (ideally based on .rubocop)
 -- TODO: Add linting via nvim-lint
