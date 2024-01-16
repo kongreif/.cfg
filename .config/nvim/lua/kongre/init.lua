@@ -25,6 +25,8 @@ require("lazy").setup({
   "BurntSushi/ripgrep",
   { "nvim-telescope/telescope.nvim", branch = "0.1.x" },
   "nvim-treesitter/nvim-treesitter",
+  "nvim-treesitter/nvim-treesitter-textobjects",
+  "nvim-treesitter/nvim-treesitter-context",
   "mbbill/undotree",
   "theprimeagen/harpoon",
   {
