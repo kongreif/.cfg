@@ -41,6 +41,15 @@ if [[ "$(uname -s)" == "Darwin" ]]; then
   source /opt/homebrew/opt/chruby/share/chruby/chruby.sh
   source /opt/homebrew/opt/chruby/share/chruby/auto.sh
 elif [[ "$(uname -s)" == "Linux" ]]; then
+  source /usr/share/chruby/chruby.sh
+  source /usr/share/chruby/auto.sh
+  chruby ruby-3.3.0
+  export PNPM_HOME="/home/kon/.local/share/pnpm"
+  case ":$PATH:" in
+    *":$PNPM_HOME:"*) ;;
+    *) export PATH="$PNPM_HOME:$PATH" ;;
+  esac
+  export PATH="/home/kon/.local/share/pnpm/global/5/node_modules:$PATH"
 fi
 
 # Work related setup
