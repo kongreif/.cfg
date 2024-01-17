@@ -11,7 +11,7 @@ alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 # Nvim remaps
 alias vi='nvim'
 alias vim='nvim'
-alias vic='vi ~/.config/nvim/'
+alias vic='cd ~/.config/nvim/ && vi .'
 
 # Git remaps
 alias ga='git add'
