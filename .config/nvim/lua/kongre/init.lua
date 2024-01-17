@@ -184,7 +184,7 @@ require("tokyonight").setup({
   transparent = true,
   styles = {
     sidebars = "transparent",
-    floats = "dark"
+    floats = "transparent"
   }
 })
 
