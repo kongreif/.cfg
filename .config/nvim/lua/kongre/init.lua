@@ -50,6 +50,7 @@ require("lazy").setup({
   },
   "nvim-tree/nvim-web-devicons",
   "nvim-lualine/lualine.nvim",
+  { dir = "~/coding/code-palette.nvim" },
   -- completion
   {
     "hrsh7th/nvim-cmp",
