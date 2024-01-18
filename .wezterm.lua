@@ -59,5 +59,10 @@ config.background = {
 	},
 }
 
+-- font
+config.font = wezterm.font_with_fallback({ "SFMono Nerd Font", "SF Pro" })
+-- don't warn about missing glyphs
+config.warn_about_missing_glyphs = false
+
 -- return the configuration to wezterm
 return config
