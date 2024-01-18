@@ -55,6 +55,11 @@ if wezterm.target_triple:find("darwin") then
 else
 	-- Linux path
 	background_image_path = "/home/kon/wezterm_background/mount_fuji.jpg"
+
+	-- font for linux
+	config.font = wezterm.font("SFMono Nerd Font")
+	-- don't warn about missing glyphs
+	config.warn_about_missing_glyphs = false
 end
 
 config.background = {
@@ -70,11 +75,6 @@ config.background = {
 		vertical_align = "Middle",
 	},
 }
-
--- font
-config.font = wezterm.font_with_fallback({ "SFMono Nerd Font", "SF Pro" })
--- don't warn about missing glyphs
-config.warn_about_missing_glyphs = false
 
 -- return the configuration to wezterm
 return config
