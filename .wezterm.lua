@@ -34,6 +34,18 @@ config.keys = {
 		mods = "CMD",
 		action = wezterm.action.CloseCurrentTab({ confirm = false }),
 	},
+	{
+		key = "t",
+		mods = "CMD",
+		action = wezterm.action.SpawnCommandInNewTab({
+			cwd = wezterm.home_dir,
+		}),
+	},
+	{
+		key = "t",
+		mods = "CMD|SHIFT",
+		action = wezterm.action({ SpawnTab = "CurrentPaneDomain" }),
+	},
 }
 
 -- Background image

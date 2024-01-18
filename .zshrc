@@ -40,10 +40,21 @@ if [[ "$(uname -s)" == "Darwin" ]]; then
   # Chruby setup for MacOS
   source /opt/homebrew/opt/chruby/share/chruby/chruby.sh
   source /opt/homebrew/opt/chruby/share/chruby/auto.sh
+  chruby ruby-3.3.0
+
+  # pnpm path
+  export PNPM_HOME="/Users/kontantingreif/Library/pnpm"
+  case ":$PATH:" in
+    *":$PNPM_HOME:"*) ;;
+    *) export PATH="$PNPM_HOME:$PATH" ;;
+  esac
 elif [[ "$(uname -s)" == "Linux" ]]; then
+  # Chruby setup for Linux
   source /usr/share/chruby/chruby.sh
   source /usr/share/chruby/auto.sh
   chruby ruby-3.3.0
+
+  # pnpm path
   export PNPM_HOME="/home/kon/.local/share/pnpm"
   case ":$PATH:" in
     *":$PNPM_HOME:"*) ;;
