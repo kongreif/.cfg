@@ -19,7 +19,11 @@ require("lazy").setup({
 		"folke/tokyonight.nvim",
 		lazy = false,
 		priority = 1000,
-		opts = {},
+		opts = {
+			dev = {
+				path = "~/coding",
+			},
+		},
 	},
 	-- Plenary is a dependency for other plugins
 	"nvim-lua/plenary.nvim",
@@ -34,7 +38,6 @@ require("lazy").setup({
 	"mbbill/undotree",
 	"theprimeagen/harpoon",
 	"nvim-lualine/lualine.nvim",
-	{ dir = "~/coding/code-palette.nvim" },
 
 	-- completion
 	{
@@ -98,7 +101,9 @@ require("lazy").setup({
 
 	-- markdown and writing
 	"jakewvincent/mkdnflow.nvim",
+
+	-- Plugins in development
+	{ "kongreif/code-palette.nvim", dev = true },
 })
 
 -- TODO: Add nvim-spectre
--- TODO: Add way to check gitblame
