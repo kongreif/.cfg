@@ -23,33 +23,19 @@ require("lazy").setup({
 	},
 	-- Plenary is a dependency for other plugins
 	"nvim-lua/plenary.nvim",
-	"BurntSushi/ripgrep",
+
+	-- navigation
 	{ "nvim-telescope/telescope.nvim", branch = "0.1.x" },
+	"BurntSushi/ripgrep",
 	"nvim-treesitter/nvim-treesitter",
 	"nvim-treesitter/nvim-treesitter-textobjects",
 	"nvim-treesitter/nvim-treesitter-context",
 	"nvim-tree/nvim-web-devicons",
 	"mbbill/undotree",
 	"theprimeagen/harpoon",
-	{
-		"jakewvincent/mkdnflow.nvim",
-		config = function()
-			require("mkdnflow").setup({
-				perspective = {
-					priority = "root",
-					root_tell = "index.md",
-				},
-			})
-		end,
-	},
-	{
-		"folke/trouble.nvim",
-		dependencies = { "nvim-tree/nvim-web-devicons" },
-		opts = {},
-		-- TODO: Add keymaps and workflow for uses
-	},
 	"nvim-lualine/lualine.nvim",
 	{ dir = "~/coding/code-palette.nvim" },
+
 	-- completion
 	{
 		"hrsh7th/nvim-cmp",
@@ -61,6 +47,7 @@ require("lazy").setup({
 			"saadparwaiz1/cmp_luasnip",
 		},
 	},
+
 	-- snippets
 	{
 		"L3MON4D3/LuaSnip",
@@ -69,18 +56,38 @@ require("lazy").setup({
 			or nil,
 		dependencies = {
 			"rafamadriz/friendly-snippets",
-			config = function()
-				require("luasnip.loaders.from_vscode").lazy_load()
-			end,
-		},
-		opts = {
-			history = true,
-			delete_check_events = "TextChanged",
 		},
 	},
+
+	-- editor workflow
 	{ "echasnovski/mini.pairs", version = false },
 	{ "echasnovski/mini.comment", version = false },
 	"JoosepAlviste/nvim-ts-context-commentstring",
+	{
+		"folke/todo-comments.nvim",
+		dependencies = { "nvim-lua/plenary.nvim" },
+		opts = {},
+	},
+	{ "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
+	"f-person/git-blame.nvim",
+
+	-- Github copilot integraion
+	{
+		"zbirenbaum/copilot.lua",
+		cmd = "Copilot",
+		build = ":Copilot auth",
+	},
+
+	-- LSP
+	"neovim/nvim-lspconfig",
+
+	-- Linting
+	"mfussenegger/nvim-lint",
+
+	-- Formatting
+	"stevearc/conform.nvim",
+
+	-- Measure nvim startup time via :StartupTime
 	{
 		"dstein64/vim-startuptime",
 		cmd = "StartupTime",
@@ -88,100 +95,10 @@ require("lazy").setup({
 			vim.g.startuptime_tries = 10
 		end,
 	},
-	{
-		"folke/todo-comments.nvim",
-		dependencies = { "nvim-lua/plenary.nvim" },
-		opts = {},
-		-- TODO: Add keymaps for showing in current opened project
-	},
-	{
-		"zbirenbaum/copilot.lua",
-		cmd = "Copilot",
-		build = ":Copilot auth",
-		opts = {
-			suggestion = {
-				auto_trigger = true,
-				key_map = {
-					accept = "<C-CR>",
-				},
-			},
-			panel = { enabled = false },
-		},
-	},
-	{
-		"zbirenbaum/copilot-cmp",
-		dependencies = "copilot.lua",
-		opts = {},
-		config = function(_, opts)
-			local copilot_cmp = require("copilot_cmp")
-			copilot_cmp.setup(opts)
-		end,
-	},
-	{ "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
-	"neovim/nvim-lspconfig",
-	"mfussenegger/nvim-lint",
-	"stevearc/conform.nvim",
+
+	-- markdown and writing
+	"jakewvincent/mkdnflow.nvim",
 })
 
-require("lint").linters_by_ft = {
-	ruby = { "rubocop" },
-	lua = { "luacheck" },
-	vue = { "eslint", "stylelint" },
-	typescript = { "eslint" },
-	javascript = { "eslint" },
-}
-
-vim.api.nvim_create_autocmd({ "BufWritePost", "BufReadPost", "InsertLeave" }, {
-	callback = function()
-		require("lint").try_lint()
-	end,
-})
-
-require("conform").setup({
-	formatters_by_ft = {
-		ruby = { "rubocop" },
-		lua = { "stylua" },
-		vue = { "prettier" },
-	},
-})
-
-local lspconfig = require("lspconfig")
-
-lspconfig.volar.setup({
-	filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
-})
-
-vim.api.nvim_create_autocmd("BufWritePre", {
-	pattern = "*",
-	callback = function(args)
-		require("conform").format({ bufnr = args.bufnr })
-	end,
-})
-
-require("lualine").setup()
-require("tokyonight").setup({
-	style = "night",
-})
-
-require("tokyonight").setup({
-	transparent = true,
-	styles = {
-		sidebars = "transparent",
-		floats = "transparent",
-	},
-})
-
-require("mini.pairs").setup()
-require("mini.comment").setup()
-require("ibl").setup()
-
-vim.cmd([[colorscheme tokyonight]])
-vim.api.nvim_create_autocmd("FileType", { pattern = "markdown", command = "set awa" })
-
--- Skip backwards compatibility routines and speed up loading.
-vim.g.skip_ts_context_commentstring_module = true
-
--- TODO: Maybe add nvim-notify
--- TODO: Add which-key.nvim
 -- TODO: Add nvim-spectre
 -- TODO: Add way to check gitblame
