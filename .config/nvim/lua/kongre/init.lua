@@ -19,11 +19,7 @@ require("lazy").setup({
 		"folke/tokyonight.nvim",
 		lazy = false,
 		priority = 1000,
-		opts = {
-			dev = {
-				path = "~/coding",
-			},
-		},
+		opts = {},
 	},
 	-- Plenary is a dependency for other plugins
 	"nvim-lua/plenary.nvim",
@@ -104,6 +100,10 @@ require("lazy").setup({
 
 	-- Plugins in development
 	{ "kongreif/code-palette.nvim", dev = true },
+}, {
+	dev = {
+		path = "~/coding",
+	},
 })
 
 -- TODO: Add nvim-spectre
