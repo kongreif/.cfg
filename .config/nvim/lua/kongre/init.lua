@@ -59,7 +59,6 @@ require("lazy").setup({
 	},
 
 	-- editor workflow
-	{ "echasnovski/mini.pairs", version = false },
 	{ "echasnovski/mini.comment", version = false },
 	"JoosepAlviste/nvim-ts-context-commentstring",
 	{
