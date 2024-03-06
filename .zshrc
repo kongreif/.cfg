@@ -68,3 +68,5 @@ if [[ "$(hostname)" == "DG097MAC.fritz.box" ]];then
   export PATH=$HOME/coding/dev/bin:$PATH
   eval "$(shadowenv init zsh)"
 fi
+
+eval "$(shadowenv init zsh)"
