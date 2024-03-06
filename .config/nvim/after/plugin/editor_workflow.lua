@@ -1,6 +1,9 @@
 require("mini.pairs").setup()
 require("mini.comment").setup()
 require("ibl").setup()
+require("gitblame").setup({
+	enabled = false,
+})
 
 -- Keymaps for todo-comments.nvim
 vim.api.nvim_set_keymap("n", "<leader>tt", ":TodoTelescope<CR>", { noremap = true, silent = true })
