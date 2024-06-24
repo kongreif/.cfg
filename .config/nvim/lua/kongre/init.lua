@@ -85,6 +85,25 @@ require("lazy").setup({
 	-- Formatting
 	"stevearc/conform.nvim",
 
+	-- Testing
+	{
+		"nvim-neotest/neotest",
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+			"antoinemadec/FixCursorHold.nvim",
+			"nvim-treesitter/nvim-treesitter",
+			"olimorris/neotest-rspec",
+		},
+		config = function()
+			require("neotest").setup({
+				adapters = {
+					require("neotest-rspec"),
+				},
+			})
+		end,
+	},
+	{ "nvim-neotest/nvim-nio" },
+
 	-- Measure nvim startup time via :StartupTime
 	{
 		"dstein64/vim-startuptime",

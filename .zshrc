@@ -28,6 +28,10 @@ alias be='bundle exec'
 # Unix remaps
 alias la='ls -la --color=auto'
 
+# Quality of life remaps
+alias ppm='cd ~/coding/privacy-partner-management'
+alias cr='cd ~/coding/contract-review'
+
 # Add further directories to path
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/homebrew/bin:$PATH"
 
@@ -64,7 +68,7 @@ elif [[ "$(uname -s)" == "Linux" ]]; then
 fi
 
 # Work related setup
-if [[ "$(hostname)" == "DG097MAC.fritz.box" ]];then
+if [[ "$(hostname)" == *DG097MAC* ]];then
   export PATH=$HOME/coding/dev/bin:$PATH
   eval "$(shadowenv init zsh)"
 fi
