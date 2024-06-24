@@ -102,6 +102,7 @@ require("lazy").setup({
 			})
 		end,
 	},
+	{ "nvim-neotest/nvim-nio" },
 
 	-- Measure nvim startup time via :StartupTime
 	{

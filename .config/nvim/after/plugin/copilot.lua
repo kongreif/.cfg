@@ -7,3 +7,10 @@ require("copilot").setup({
 	},
 	panel = { enabled = false },
 })
+
+vim.api.nvim_set_keymap(
+	"n",
+	"<Leader>cp",
+	":lua require('copilot.suggestion').toggle_auto_trigger()<CR>",
+	{ noremap = true, silent = true }
+)
