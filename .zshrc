@@ -70,3 +70,4 @@ if [[ "$(hostname)" == "DG097MAC.fritz.box" ]];then
 fi
 
 eval "$(shadowenv init zsh)"
+export PATH="/opt/homebrew/opt/postgresql@16/bin:$PATH"
