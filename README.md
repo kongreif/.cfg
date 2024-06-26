@@ -59,7 +59,13 @@ Install NodeJS
 yay nodejs
 ```
 Start Neovim and invoke `:Copilot setup` and then `:Copilot auth`
+# 7.2 Setup telescope
+Install ripgrep
+```
+yay ripgrep
+```
 # 8. Rails dev related setup
+## 8.1 Install ruby
 Install ruby-install
 ```
 yay ruby-install
@@ -75,4 +81,17 @@ ruby-install
 Then install desired ruby version, e.g.
 ```
 ruby-install 3.3.3
+```
+## 8.2 Install PostgreSQL
+```
+yay postgresql
+```
+Initialize PostgreSQL database cluster:
+```
+sudo su - postgres -c "initdb --locale en_US.UTF-8 -D /var/lib/postgres/data"
+```
+Start the PostgreSQL service and enable it to start on boot:
+```
+sudo systemctl start postgresql
+sudo systemctl enable postgresql
 ```
