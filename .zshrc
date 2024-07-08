@@ -8,6 +8,9 @@ PROMPT='%F{blue}%~%f %F{red}${vcs_info_msg_0_}%f'
 # Dotfiles via git
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
+# Switch theme
+alias toggletheme='~/.toggle-theme.sh'
+
 # Nvim remaps
 alias vi='nvim'
 alias vim='nvim'

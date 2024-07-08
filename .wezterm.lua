@@ -48,33 +48,5 @@ config.keys = {
 	},
 }
 
--- Background image
-if wezterm.target_triple:find("darwin") then
-	-- macOS path
-	background_image_path = "/Users/" .. username .. "/wezterm_background/mount_fuji.jpg"
-else
-	-- Linux path
-	background_image_path = "/home/kon/wezterm_background/mount_fuji.jpg"
-
-	-- font for linux
-	config.font = wezterm.font("SFMono Nerd Font")
-	-- don't warn about missing glyphs
-	config.warn_about_missing_glyphs = false
-end
-
-config.background = {
-	{
-		source = {
-			File = background_image_path,
-		},
-		hsb = {
-			saturation = 1.0,
-			brightness = 0.01,
-		},
-		horizontal_align = "Center",
-		vertical_align = "Middle",
-	},
-}
-
 -- return the configuration to wezterm
 return config
