@@ -1,5 +1,6 @@
 require("kongre.remap")
 require("kongre.set")
+require("kongre.globals")
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
