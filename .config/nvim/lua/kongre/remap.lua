@@ -43,3 +43,6 @@ vim.api.nvim_create_user_command("Cppathand", function()
     vim.fn.setreg("+", path)
     vim.notify('Copied "' .. path .. '" to the clipboard!')
 end, {})
+
+vim.keymap.set("n", "<leader>t", "<Plug>PlenaryTestFile")
+vim.keymap.set("n", "^", "<C-^>")
