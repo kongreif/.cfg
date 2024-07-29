@@ -124,4 +124,10 @@ require("lazy").setup({
 	},
 })
 
+-- Autocommands for specific filetypes
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+	pattern = "*.jbuilder",
+	command = "set filetype=ruby",
+})
+
 -- TODO: Add nvim-spectre
