@@ -1,5 +1,6 @@
 require("kongre.remap")
 require("kongre.set")
+require("kongre.globals")
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
@@ -117,10 +118,11 @@ require("lazy").setup({
 	"jakewvincent/mkdnflow.nvim",
 
 	-- Plugins in development
-	{ "kongreif/code-palette.nvim", dev = true },
+  { dir = "~/coding/neovim-plugins/request.nvim" },
+	-- { "kongreif/request.nvim", dev = true },
 }, {
 	dev = {
-		path = "~/coding",
+		path = "~/coding/neovim-plugins",
 	},
 })
 
