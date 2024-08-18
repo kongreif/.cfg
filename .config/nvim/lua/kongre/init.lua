@@ -118,7 +118,7 @@ require("lazy").setup({
 	"jakewvincent/mkdnflow.nvim",
 
 	-- Plugins in development
-  { dir = "~/coding/neovim-plugins/request.nvim" },
+	{ dir = "~/coding/neovim-plugins/request.nvim" },
 	-- { "kongreif/request.nvim", dev = true },
 }, {
 	dev = {
