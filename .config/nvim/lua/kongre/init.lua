@@ -28,7 +28,10 @@ require("lazy").setup({
 	-- navigation
 	{ "nvim-telescope/telescope.nvim", branch = "0.1.x" },
 	"BurntSushi/ripgrep",
-	"nvim-treesitter/nvim-treesitter",
+  {
+    'nvim-treesitter/nvim-treesitter',
+    build = ':TSUpdate',
+  },
 	"nvim-treesitter/nvim-treesitter-textobjects",
 	"nvim-treesitter/nvim-treesitter-context",
 	"nvim-tree/nvim-web-devicons",
