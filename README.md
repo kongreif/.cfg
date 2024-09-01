@@ -1,29 +1,40 @@
-# 1. Install wezterm
+These are my personal dotfiles.
+I'm using [Wezterm](https://wezfurlong.org/wezterm/index.html) as a terminal emulator and [Neovim](https://neovim.io/) as a text editor.
+My dotfiles live in a bare git repository with `$HOME` as the worktree. It's inspired by [this blog article](https://www.atlassian.com/git/tutorials/dotfiles).
+
+## Install instructions
+### General
+1. Install wezterm
 E.g.
 ```
 yay wezterm
 ```
-# 2. Install nvim
+
+2. Install nvim
 E.g.
 ```
 yay neovim
 ```
-# 3. Set default shell to ZSH
-## 3.1 Install ZSH
+
+3. Set default shell to ZSH
+Install ZSH
 ```
 yay zsh
 ```
-## 3.2 Set default shell for your user
+Set default shell for your user
 ```
 chsh -s /bin/zsh
 ```
-# 4. Ignore .cfg in .gitignore
+
+
+4. Ignore .cfg in .gitignore
 ```
 touch ~/.gitignore
 echo ".cfg" >> ~/.gitignore
 ```
-# 5. Clone repo
-After setting up SSH for github, clone the repo:
+
+5. Clone repo
+After setting up SSH for github, clone the repo as `--bare`:
 ```
 git clone --bare git@github.com:kongreif/.cfg.git $HOME/.cfg
 ```
@@ -36,7 +47,9 @@ Checkout the actual content from the bare repository to your $HOME:
 config checkout
 ```
 If above fails, move / delete .zshrc and run again.
-# 6. Set showUntrackedFiles to no
+
+
+6. Set showUntrackedFiles to no
 Set the flag showUntrackedFiles to no on this specific (local) repository:
 ```
 config config --local status.showUntrackedFiles no
@@ -48,28 +61,19 @@ config add .filename
 config commit -m "Add filename"
 config push
 ```
-# 7. Setup nvim
-```
-nvim test
-```
-# 7.1 Setup copilot
-Copilot installation will fail at first.
-Install NodeJS
-```
-yay nodejs
-```
-Start Neovim and invoke `:Copilot setup` and then `:Copilot auth`
-# 7.2 Setup telescope
-Install ripgrep
+7. Setup nvim
+In order for telescope to work, you'll need to install ripgrep
+
 ```
 yay ripgrep
 ```
-# 8. Rails dev related setup
-## 8.1 Install ruby
+### Rails dev related setup
+1. Install ruby
 Install ruby-install
 ```
 yay ruby-install
 ```
+
 Install chruby
 ```
 yay chruby
@@ -82,7 +86,8 @@ Then install desired ruby version, e.g.
 ```
 ruby-install 3.3.3
 ```
-## 8.2 Install PostgreSQL
+
+2. Install PostgreSQL
 ```
 yay postgresql
 ```
