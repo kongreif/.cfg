@@ -28,10 +28,10 @@ require("lazy").setup({
 	-- navigation
 	{ "nvim-telescope/telescope.nvim", branch = "0.1.x" },
 	"BurntSushi/ripgrep",
-  {
-    'nvim-treesitter/nvim-treesitter',
-    build = ':TSUpdate',
-  },
+	{
+		"nvim-treesitter/nvim-treesitter",
+		build = ":TSUpdate",
+	},
 	"nvim-treesitter/nvim-treesitter-textobjects",
 	"nvim-treesitter/nvim-treesitter-context",
 	"nvim-tree/nvim-web-devicons",
@@ -117,16 +117,34 @@ require("lazy").setup({
 		end,
 	},
 
+	-- neovim development
+	{
+		"folke/lazydev.nvim",
+		ft = "lua", -- only load on lua files
+		opts = {},
+	},
+	{ -- completion source for require statements and module annotations
+		"hrsh7th/nvim-cmp",
+		opts = function(_, opts)
+			opts.sources = opts.sources or {}
+			table.insert(opts.sources, {
+				name = "lazydev",
+				group_index = 0, -- set group index to 0 to skip loading LuaLS completions
+			})
+		end,
+	},
+
 	-- markdown and writing
 	"jakewvincent/mkdnflow.nvim",
 
 	-- Plugins in development
 	{
-    "kongreif/request.nvim", dev = true,
-    config = function()
-      require('request')
-    end,
-  },
+		"kongreif/request.nvim",
+		dev = true,
+		config = function()
+			require("request")
+		end,
+	},
 }, {
 	dev = {
 		path = "~/coding/neovim-plugins/",
