@@ -78,7 +78,6 @@ if [[ "$(hostname)" == *DG097MAC* ]];then
   eval "$(shadowenv init zsh)"
 fi
 
-eval "$(shadowenv init zsh)"
 export PATH="/opt/homebrew/opt/postgresql@16/bin:$PATH"
 
 # Generated for envman. Do not edit.
