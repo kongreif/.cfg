@@ -8,3 +8,5 @@ lspconfig.volar.setup({
 		},
 	},
 })
+
+lspconfig.jsonls.setup({})
