@@ -147,7 +147,7 @@ require("lazy").setup({
 	},
 }, {
 	dev = {
-		path = "~/coding/neovim-plugins/",
+		path = "~/code/neovim-plugins/",
 	},
 })
 
