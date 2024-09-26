@@ -1,7 +1,4 @@
--- Pull in the wezterm API
 local wezterm = require("wezterm")
-
-local username = os.getenv("USER") or os.getenv("USERNAME")
 
 -- Multiplexer module
 local mux = wezterm.mux
@@ -17,7 +14,7 @@ end
 
 -- This is where you actually apply your config choices
 wezterm.on("gui-startup", function()
-	local tab, pane, window = mux.spawn_window({})
+	local window = mux.spawn_window({})
 	window:gui_window():maximize()
 end)
 
@@ -27,7 +24,7 @@ config.color_scheme = "tokyonight_night"
 -- Disable close confirmaion
 config.window_close_confirmation = "NeverPrompt"
 
--- Disable close tab confirmation
+config.leader = { key = "b", mods = "CTRL" }
 config.keys = {
 	{
 		key = "w",
@@ -45,6 +42,56 @@ config.keys = {
 		key = "t",
 		mods = "CMD|SHIFT",
 		action = wezterm.action({ SpawnTab = "CurrentPaneDomain" }),
+	},
+
+	{
+		key = "<",
+		mods = "LEADER",
+		action = wezterm.action.MoveTabRelative(-1),
+	},
+	{
+		key = ">",
+		mods = "LEADER",
+		action = wezterm.action.MoveTabRelative(1),
+	},
+
+	-- multiplexing commands
+	-- opening / closing panes
+	{
+		key = "%",
+		mods = "LEADER",
+		action = wezterm.action.SplitHorizontal({ domain = "CurrentPaneDomain" }),
+	},
+	{
+		key = '"',
+		mods = "LEADER",
+		action = wezterm.action.SplitVertical({ domain = "CurrentPaneDomain" }),
+	},
+	{
+		key = "X",
+		mods = "LEADER",
+		action = wezterm.action.CloseCurrentPane({ confirm = false }),
+	},
+	-- navigating through panes
+	{
+		key = "LeftArrow",
+		mods = "LEADER",
+		action = wezterm.action.ActivatePaneDirection("Left"),
+	},
+	{
+		key = "RightArrow",
+		mods = "LEADER",
+		action = wezterm.action.ActivatePaneDirection("Right"),
+	},
+	{
+		key = "UpArrow",
+		mods = "LEADER",
+		action = wezterm.action.ActivatePaneDirection("Up"),
+	},
+	{
+		key = "DownArrow",
+		mods = "LEADER",
+		action = wezterm.action.ActivatePaneDirection("Down"),
 	},
 }
 

@@ -82,3 +82,5 @@ export PATH="/opt/homebrew/opt/postgresql@16/bin:$PATH"
 
 # Generated for envman. Do not edit.
 [ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
+
+eval "$(shadowenv init zsh)"
