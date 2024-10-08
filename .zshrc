@@ -1,50 +1,100 @@
-# Loads version control into prompt
-autoload -Uz vcs_info
-precmd() { vcs_info }
-zstyle ':vcs_info:git:*' formats '%b '
-setopt PROMPT_SUBST
-PROMPT='%F{blue}%~%f %F{red}${vcs_info_msg_0_}%f'
+export ZSH="$HOME/.oh-my-zsh"
 
-# Dotfiles via git
-alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+ZSH_THEME="robbyrussell"
 
-# Switch theme
-alias toggletheme='~/.toggle-theme.sh'
+# Uncomment the following line to use case-sensitive completion.
+# CASE_SENSITIVE="true"
 
-# Nvim remaps
-alias vi='nvim'
-alias vim='nvim'
-alias vic='cd ~/.config/nvim/ && vi .'
+# Uncomment the following line to use hyphen-insensitive completion.
+# Case-sensitive completion must be off. _ and - will be interchangeable.
+# HYPHEN_INSENSITIVE="true"
 
-# Git remaps
-alias ga='git add'
-alias gc='git commit -v'
-alias gp='git push'
-alias gst='git status'
-alias gsw='git switch'
-alias gswc='git switch -c'
-alias gswm='git switch main'
+# Uncomment one of the following lines to change the auto-update behavior
+# zstyle ':omz:update' mode disabled  # disable automatic updates
+# zstyle ':omz:update' mode auto      # update automatically without asking
+# zstyle ':omz:update' mode reminder  # just remind me to update when it's time
 
-# Rails remaps
-alias be='bundle exec'
+# Uncomment the following line to change how often to auto-update (in days).
+# zstyle ':omz:update' frequency 13
 
-# Unix remaps
-alias la='ls -la --color=auto'
+# Uncomment the following line if pasting URLs and other text is messed up.
+# DISABLE_MAGIC_FUNCTIONS="true"
 
-# Quality of life remaps
-alias ppm='cd ~/coding/privacy-partner-management'
-alias cr='cd ~/coding/contract-review'
+# Uncomment the following line to disable colors in ls.
+# DISABLE_LS_COLORS="true"
 
-# Add further directories to path
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/homebrew/bin:$PATH"
+# Uncomment the following line to disable auto-setting terminal title.
+# DISABLE_AUTO_TITLE="true"
+
+# Uncomment the following line to enable command auto-correction.
+# ENABLE_CORRECTION="true"
+
+# Uncomment the following line to display red dots whilst waiting for completion.
+# You can also set it to another string to have that shown instead of the default red dots.
+# e.g. COMPLETION_WAITING_DOTS="%F{yellow}waiting...%f"
+# Caution: this setting can cause issues with multiline prompts in zsh < 5.7.1 (see #5765)
+# COMPLETION_WAITING_DOTS="true"
+
+# Uncomment the following line if you want to disable marking untracked files
+# under VCS as dirty. This makes repository status check for large repositories
+# much, much faster.
+# DISABLE_UNTRACKED_FILES_DIRTY="true"
+
+# Uncomment the following line if you want to change the command execution time
+# stamp shown in the history command output.
+# You can set one of the optional three formats:
+# "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
+# or set a custom format using the strftime function format specifications,
+# see 'man strftime' for details.
+# HIST_STAMPS="mm/dd/yyyy"
+
+# Would you like to use another custom folder than $ZSH/custom?
+# ZSH_CUSTOM=/path/to/new-custom-folder
+
+# Which plugins would you like to load?
+# Standard plugins can be found in $ZSH/plugins/
+# Custom plugins may be added to $ZSH_CUSTOM/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+# Add wisely, as too many plugins slow down shell startup.
+plugins=(git)
+
+source $ZSH/oh-my-zsh.sh
+
+# User configuration
+
+# export MANPATH="/usr/local/man:$MANPATH"
+
+# You may need to manually set your language environment
+# export LANG=en_US.UTF-8
+
+# Preferred editor for local and remote sessions
+# if [[ -n $SSH_CONNECTION ]]; then
+#   export EDITOR='vim'
+# else
+#   export EDITOR='nvim'
+# fi
+
+# Compilation flags
+# export ARCHFLAGS="-arch $(uname -m)"
+
+# --- PATH
+export PATH="\
+/usr/local/bin:\
+/usr/bin:\
+/bin:\
+/usr/sbin:\
+/sbin:\
+/opt/homebrew/bin:\
+/opt/homebrew/opt/postgresql@16/bin:$PATH
+$PATH:\
+$HOME/go/bin:\
+$HOME/.local/opt/go/bin"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-export PATH="$PATH:$HOME/go/bin"
-export PATH=$PATH:$HOME/.local/opt/go/bin
-
+# --- SETUP BASED ON MACHINE
 # OS based setup
 if [[ "$(uname -s)" == "Darwin" ]]; then
   # Chruby setup for MacOS
@@ -74,14 +124,31 @@ elif [[ "$(uname -s)" == "Linux" ]]; then
 fi
 
 # Work related setup
-if [[ "$(hostname)" == *DG097MAC* ]];then
+if [[ "$(hostname)" == *MacBookPro.fritz.box* ]];then
   export PATH=$HOME/coding/dev/bin:$PATH
   eval "$(shadowenv init zsh)"
+  # Generated for envman. Do not edit.
+  [ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
 fi
 
-export PATH="/opt/homebrew/opt/postgresql@16/bin:$PATH"
+# --- ALIASES
+# Dotfiles via git
+alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
-# Generated for envman. Do not edit.
-[ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
+# Switch theme
+alias toggletheme='~/.toggle-theme.sh'
+
+# Nvim remaps
+alias vi='nvim'
+alias vim='nvim'
+alias vic='cd ~/.config/nvim/ && vi .'
+
+# Rails remaps
+alias be='bundle exec'
+
+# Quality of life remaps
+alias ppm='cd ~/coding/privacy-partner-management'
+alias cr='cd ~/coding/contract-review'
+
 
 eval "$(shadowenv init zsh)"

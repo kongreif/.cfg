@@ -9,14 +9,16 @@ E.g.
 ```
 yay wezterm
 ```
+2. Install OhmyZSH
+[Official install guide](https://ohmyz.sh/#install)
 
-2. Install nvim
+3. Install nvim
 E.g.
 ```
 yay neovim
 ```
 
-3. Set default shell to ZSH
+4. Set default shell to ZSH
 Install ZSH
 ```
 yay zsh
@@ -27,13 +29,13 @@ chsh -s /bin/zsh
 ```
 
 
-4. Ignore .cfg in .gitignore
+5. Ignore .cfg in .gitignore
 ```
 touch ~/.gitignore
 echo ".cfg" >> ~/.gitignore
 ```
 
-5. Clone repo
+6. Clone repo
 After setting up SSH for github, clone the repo as `--bare`:
 ```
 git clone --bare git@github.com:kongreif/.cfg.git $HOME/.cfg
@@ -49,7 +51,7 @@ config checkout
 If above fails, move / delete .zshrc and run again.
 
 
-6. Set showUntrackedFiles to no
+7. Set showUntrackedFiles to no
 Set the flag showUntrackedFiles to no on this specific (local) repository:
 ```
 config config --local status.showUntrackedFiles no
@@ -61,7 +63,7 @@ config add .filename
 config commit -m "Add filename"
 config push
 ```
-7. Setup nvim
+8. Setup nvim
 In order for telescope to work, you'll need to install ripgrep
 
 ```
