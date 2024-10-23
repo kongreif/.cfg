@@ -1,6 +1,6 @@
 require("lint").linters_by_ft = {
 	ruby = { "rubocop" },
-	vue = { "eslint", "stylelint" },
+	vue = { "eslint" },
 	typescript = { "eslint" },
 	javascript = { "eslint" },
 }
