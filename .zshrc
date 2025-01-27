@@ -147,7 +147,7 @@ alias vic='cd ~/.config/nvim/ && vi .'
 alias be='bundle exec'
 
 # Quality of life remaps
-alias ppm='cd ~/coding/privacy-partner-management'
+alias vendors='cd ~/coding/vendors'
 alias cr='cd ~/coding/contract-review'
 
 
