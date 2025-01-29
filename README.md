@@ -2,6 +2,12 @@ These are my personal dotfiles.
 I'm using [Wezterm](https://wezfurlong.org/wezterm/index.html) as a terminal emulator and [Neovim](https://neovim.io/) as a text editor.
 My dotfiles live in a bare git repository with `$HOME` as the worktree. It's inspired by [this blog article](https://www.atlassian.com/git/tutorials/dotfiles).
 
+**Table of Contents**
+[Install instructions MacOS](#install-instructions-macos)
+[Install instructions Arch Linux](#install-instructions-arch-linux)
+[]()
+[]()
+
 ## Install instructions MacOS
 ### General
 1. Install wezterm
