@@ -12,6 +12,20 @@ if wezterm.config_builder then
 	config = wezterm.config_builder()
 end
 
+-- Format tab title to contain the path's directory and current process
+wezterm.on("format-tab-title", function(tab)
+	local cwd_uri = tab.active_pane.current_working_dir.path or ""
+	cwd_uri = string.match(cwd_uri, "[^/]+$")
+
+	local process = tab.active_pane.foreground_process_name
+	process = string.gsub(process, "^.*[/\\]+", "")
+	if not process or process == "" then
+		process = tab.active_pane.title
+	end
+
+	return string.format("%d: %s | %s", tab.tab_index + 1, cwd_uri, process)
+end)
+
 -- This is where you actually apply your config choices
 wezterm.on("gui-startup", function()
 	local window = mux.spawn_window({})
