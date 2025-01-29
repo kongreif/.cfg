@@ -5,8 +5,7 @@ My dotfiles live in a bare git repository with `$HOME` as the worktree. It's ins
 **Table of Contents**
 * [Install instructions MacOS](#install-instructions-macos)
 * [Install instructions Arch Linux](#install-instructions-arch-linux)
-* []()
-* []()
+* [Rails dev related setup](#rails-dev-related-setup)
 
 ## Install instructions MacOS
 ### General
