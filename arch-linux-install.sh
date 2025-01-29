@@ -18,6 +18,18 @@ check_and_install() {
 	fi
 }
 
+# Checks whether files/dirs/symlinks exist already, deletes them if so.
+link_dotfile() {
+	local src = "$1"
+	local dest= "$2"
+	if [ -e "$dest" ] || [ -L "$dest" ]; then
+		echo "Removing existing $dest"
+		rm -rf "$dest"
+	fi
+	echo "Creating symlink for $dest"
+	ln -sf "$src" "$dest"
+}
+
 # terminal emulator
 check_and_install "wezterm"
 # neovim and dependencies
@@ -52,3 +64,8 @@ if [ ! -d "$HOME/.oh-my-zsh" ]; then
 else
     echo "Oh My Zsh is already installed"
 fi
+
+# Create symlinks
+link_dotfile "$DOTFILES/.wezterm" "$HOME/.wezterm"
+link_dotfile "$DOTFILES/.zshrc" "$HOME/.zshrc"
+link_dotfile "$DOTFILES/.config/nvim" "$HOME/.config/nvim"
