@@ -77,13 +77,6 @@ require("lazy").setup({
 	{ "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
 	"f-person/git-blame.nvim",
 
-	-- Github copilot integraion
-	{
-		"zbirenbaum/copilot.lua",
-		cmd = "Copilot",
-		build = ":Copilot auth",
-	},
-
 	-- LSP
 	"neovim/nvim-lspconfig",
 	{
