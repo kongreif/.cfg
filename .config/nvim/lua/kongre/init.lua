@@ -36,7 +36,11 @@ require("lazy").setup({
 	"nvim-treesitter/nvim-treesitter-context",
 	"nvim-tree/nvim-web-devicons",
 	"mbbill/undotree",
-	"theprimeagen/harpoon",
+	{
+		"ThePrimeagen/harpoon",
+		branch = "harpoon2",
+		dependencies = { "nvim-lua/plenary.nvim" },
+	},
 	"nvim-lualine/lualine.nvim",
 
 	-- completion
