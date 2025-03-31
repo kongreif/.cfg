@@ -1,3 +1,4 @@
+require("mason").setup()
 local lspconfig = require("lspconfig")
 
 lspconfig.volar.setup({
@@ -5,6 +6,9 @@ lspconfig.volar.setup({
 	init_options = {
 		typescript = {
 			tsdk = "/opt/homebrew/lib/node_modules/typescript/lib",
+		},
+		vue = {
+			hybridMode = false,
 		},
 	},
 })

@@ -86,6 +86,9 @@ require("lazy").setup({
 
 	-- LSP
 	"neovim/nvim-lspconfig",
+	{
+		"williamboman/mason.nvim",
+	},
 
 	-- Linting
 	"mfussenegger/nvim-lint",
@@ -98,7 +101,6 @@ require("lazy").setup({
 		"nvim-neotest/neotest",
 		dependencies = {
 			"nvim-lua/plenary.nvim",
-			"antoinemadec/FixCursorHold.nvim",
 			"nvim-treesitter/nvim-treesitter",
 			"olimorris/neotest-rspec",
 		},
