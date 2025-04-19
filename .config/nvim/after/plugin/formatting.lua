@@ -1,5 +1,6 @@
 require("conform").setup({
 	formatters_by_ft = {
+		javascript = { "prettier" },
 		ruby = { "rubocop" },
 		lua = { "stylua" },
 		vue = { "prettier" },
