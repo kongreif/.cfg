@@ -121,6 +121,10 @@ elif [[ "$(uname -s)" == "Linux" ]]; then
     *) export PATH="$PNPM_HOME:$PATH" ;;
   esac
   export PATH="/home/kon/.local/share/pnpm/global/5/node_modules:$PATH"
+
+  export GTK_IM_MODULE=ibus
+  export QT_IM_MODULE=ibus
+  export XMODIFIERS=@im=ibus
 fi
 
 # Work related setup
