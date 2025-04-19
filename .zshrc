@@ -109,9 +109,5 @@ alias vic='cd ~/.config/nvim/ && vi .'
 # Rails remaps
 alias be='bundle exec'
 
-# Quality of life remaps
-alias vendors='cd ~/coding/vendors'
-alias cr='cd ~/coding/contract-review'
-
 # Import machine specific config
 [[ -r $HOME/.zshrc.local ]] && source $HOME/.zshrc.local
