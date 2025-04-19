@@ -94,47 +94,6 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-# --- SETUP BASED ON MACHINE
-# OS based setup
-if [[ "$(uname -s)" == "Darwin" ]]; then
-  # Chruby setup for MacOS
-  source /opt/homebrew/opt/chruby/share/chruby/chruby.sh
-  source /opt/homebrew/opt/chruby/share/chruby/auto.sh
-  chruby ruby-3.3.0
-
-  # pnpm path
-  export PNPM_HOME="/Users/kontantingreif/Library/pnpm"
-  case ":$PATH:" in
-    *":$PNPM_HOME:"*) ;;
-    *) export PATH="$PNPM_HOME:$PATH" ;;
-  esac
-elif [[ "$(uname -s)" == "Linux" ]]; then
-  # Chruby setup for Linux
-  source /usr/share/chruby/chruby.sh
-  source /usr/share/chruby/auto.sh
-  chruby ruby-3.3.0
-
-  # pnpm path
-  export PNPM_HOME="/home/kon/.local/share/pnpm"
-  case ":$PATH:" in
-    *":$PNPM_HOME:"*) ;;
-    *) export PATH="$PNPM_HOME:$PATH" ;;
-  esac
-  export PATH="/home/kon/.local/share/pnpm/global/5/node_modules:$PATH"
-
-  export GTK_IM_MODULE=ibus
-  export QT_IM_MODULE=ibus
-  export XMODIFIERS=@im=ibus
-fi
-
-# Work related setup
-if [[ "$(hostname)" == *MacBookPro.fritz.box* ]];then
-  export PATH=$HOME/coding/dev/bin:$PATH
-  eval "$(shadowenv init zsh)"
-  # Generated for envman. Do not edit.
-  [ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
-fi
-
 # --- ALIASES
 # Dotfiles via git
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
@@ -154,5 +113,5 @@ alias be='bundle exec'
 alias vendors='cd ~/coding/vendors'
 alias cr='cd ~/coding/contract-review'
 
-
-eval "$(shadowenv init zsh)"
+# Import machine specific config
+[[ -r $HOME/.zshrc.local ]] && source $HOME/.zshrc.local
