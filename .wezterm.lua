@@ -38,7 +38,7 @@ config.color_scheme = "tokyonight_night"
 -- Disable close confirmaion
 config.window_close_confirmation = "NeverPrompt"
 
-config.leader = { key = "b", mods = "CTRL" }
+config.leader = { key = "b", mods = "CTRL", timeout_milliseconds = 2000 }
 config.keys = {
 	{
 		key = "w",
@@ -60,12 +60,12 @@ config.keys = {
 
 	{
 		key = "<",
-		mods = "LEADER",
+		mods = "LEADER|SHIFT",
 		action = wezterm.action.MoveTabRelative(-1),
 	},
 	{
 		key = ">",
-		mods = "LEADER",
+		mods = "LEADER|SHIFT",
 		action = wezterm.action.MoveTabRelative(1),
 	},
 
@@ -73,38 +73,38 @@ config.keys = {
 	-- opening / closing panes
 	{
 		key = "%",
-		mods = "LEADER",
+		mods = "LEADER|SHIFT",
 		action = wezterm.action.SplitHorizontal({ domain = "CurrentPaneDomain" }),
 	},
 	{
 		key = '"',
-		mods = "LEADER",
+		mods = "LEADER|SHIFT",
 		action = wezterm.action.SplitVertical({ domain = "CurrentPaneDomain" }),
 	},
 	{
 		key = "X",
-		mods = "LEADER",
+		mods = "LEADER|SHIFT",
 		action = wezterm.action.CloseCurrentPane({ confirm = false }),
 	},
 	-- navigating through panes
 	{
 		key = "LeftArrow",
-		mods = "LEADER",
+		mods = "LEADER|SHIFT",
 		action = wezterm.action.ActivatePaneDirection("Left"),
 	},
 	{
 		key = "RightArrow",
-		mods = "LEADER",
+		mods = "LEADER|SHIFT",
 		action = wezterm.action.ActivatePaneDirection("Right"),
 	},
 	{
 		key = "UpArrow",
-		mods = "LEADER",
+		mods = "LEADER|SHIFT",
 		action = wezterm.action.ActivatePaneDirection("Up"),
 	},
 	{
 		key = "DownArrow",
-		mods = "LEADER",
+		mods = "LEADER|SHIFT",
 		action = wezterm.action.ActivatePaneDirection("Down"),
 	},
 }
