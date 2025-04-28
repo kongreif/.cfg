@@ -2,7 +2,12 @@ These are my personal dotfiles.
 I'm using [Wezterm](https://wezfurlong.org/wezterm/index.html) as a terminal emulator and [Neovim](https://neovim.io/) as a text editor.
 My dotfiles live in a bare git repository with `$HOME` as the worktree. It's inspired by [this blog article](https://www.atlassian.com/git/tutorials/dotfiles).
 
-## Install instructions
+**Table of Contents**
+* [Install instructions MacOS](#install-instructions-macos)
+* [Install instructions Arch Linux](#install-instructions-arch-linux)
+* [Rails dev related setup](#rails-dev-related-setup)
+
+## Install instructions MacOS
 ### General
 1. Install wezterm
 E.g.
@@ -69,7 +74,15 @@ In order for telescope to work, you'll need to install ripgrep
 ```
 yay ripgrep
 ```
-### Rails dev related setup
+
+## Install instructions Arch Linux
+
+1. `git clone git@github.com:kongrei/.cfg.git`
+1. `cd .cfg`
+1. `chmod +x arch-linux-install.sh`
+1. `chmod +x arch-linux-install.sh`
+
+## Rails dev related setup
 1. Install ruby
 Install ruby-install
 ```
