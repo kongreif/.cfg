@@ -27,7 +27,17 @@ require("lazy").setup({
 		"nvim-lua/plenary.nvim",
 
 		-- navigation
-		{ "nvim-telescope/telescope.nvim", branch = "0.1.x" },
+		{
+			"nvim-telescope/telescope.nvim",
+			branch = "0.1.x",
+			dependencies = {
+				"nvim-lua/plenary.nvim",
+				{
+					"nvim-telescope/telescope-fzf-native.nvim",
+					built = "make",
+				},
+			},
+		},
 		"BurntSushi/ripgrep",
 		{
 			"nvim-treesitter/nvim-treesitter",

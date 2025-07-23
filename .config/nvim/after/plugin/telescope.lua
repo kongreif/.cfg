@@ -1,18 +1,22 @@
-local builtin = require('telescope.builtin')
-vim.keymap.set('n', '<leader>pf', builtin.find_files, {})
-vim.keymap.set('n', '<leader>pg', builtin.git_files, {})
-vim.keymap.set('n', '<leader>pw', builtin.grep_string, {})
-vim.keymap.set('n', '<leader>ps', builtin.live_grep, {})
+local builtin = require("telescope.builtin")
+vim.keymap.set("n", "<leader>pf", builtin.find_files, { desc = "Telescope files" })
+vim.keymap.set("n", "<leader>pgf", builtin.git_files, { desc = "Telescope git files" })
+vim.keymap.set("n", "<leader>pgc", builtin.git_commits, { desc = "Telescope git commits" })
+vim.keymap.set("n", "<leader>pw", builtin.grep_string, { desc = "Telescope string under cursor" })
+vim.keymap.set("n", "<leader>ps", builtin.live_grep, { desc = "Telescope grep" })
+vim.keymap.set("n", "<leader>pd", builtin.diagnostics, { desc = "Telescope diagnostics" })
+vim.keymap.set("n", "<leader>pht", builtin.help_tags, { desc = "Telescope help_tags" })
+vim.keymap.set("n", "<leader>pk", builtin.keymaps, { desc = "Telescope keymaps" })
+vim.keymap.set("n", "<leader>pn", function()
+	builtin.find_files({
+		cwd = vim.fn.stdpath("config"),
+	})
+end, { desc = "Telescope vim config" })
 
--- INFO: grep_string can be turned on, if live_grep is too slow
--- vim.keymap.set('n', '<leader>ps', function()
--- 	builtin.grep_string({ search = vim.fn.input("Grep > ") })
--- end)
-
-require('telescope').setup{
-  pickers = {
-      find_files = {
-          find_command = { "rg", "--files", "--hidden", "--glob", "!**/.git/*" },
-      },
-  },
-}
+require("telescope").setup({
+	pickers = {
+		find_files = {
+			find_command = { "rg", "--files", "--hidden", "--glob", "!**/.git/*" },
+		},
+	},
+})
