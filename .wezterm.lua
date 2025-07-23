@@ -57,6 +57,11 @@ config.keys = {
 		mods = "CMD|SHIFT",
 		action = wezterm.action({ SpawnTab = "CurrentPaneDomain" }),
 	},
+	{
+		key = "p",
+		mods = "ALT",
+		action = wezterm.action.SendString("pro\n"),
+	},
 
 	{
 		key = "<",
