@@ -79,7 +79,20 @@ require("lazy").setup({
 		"f-person/git-blame.nvim",
 
 		-- LSP
-		"neovim/nvim-lspconfig",
+		{
+			"neovim/nvim-lspconfig",
+			dependencies = {
+				{
+					"folke/lazydev.nvim",
+					ft = "lua", -- only load on lua files
+					opts = {
+						library = {
+							{ path = "${3rd}/luv/library", words = { "vim%.uv" } },
+						},
+					},
+				},
+			},
+		},
 		{
 			"williamboman/mason.nvim",
 		},
@@ -118,11 +131,6 @@ require("lazy").setup({
 		},
 
 		-- neovim development
-		{
-			"folke/lazydev.nvim",
-			ft = "lua", -- only load on lua files
-			opts = {},
-		},
 		{ -- completion source for require statements and module annotations
 			"hrsh7th/nvim-cmp",
 			opts = function(_, opts)

@@ -77,6 +77,3 @@ vim.keymap.set("n", "^", "<C-^>", { desc = "Switch to alternate file" })
 
 -- Execute :Request command
 vim.keymap.set("n", "<leader>R", ":Request<CR>", { desc = "Open request.nvim" })
-
--- LSP Rename
-vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, { desc = "LSP Rename" })
