@@ -47,20 +47,25 @@ config.keys = {
 	},
 	{
 		key = "t",
-		mods = "CMD",
+		mods = "CTRL",
 		action = wezterm.action.SpawnCommandInNewTab({
 			cwd = wezterm.home_dir,
 		}),
 	},
 	{
 		key = "t",
-		mods = "CMD|SHIFT",
+		mods = "CTRL|SHIFT",
 		action = wezterm.action({ SpawnTab = "CurrentPaneDomain" }),
 	},
 	{
 		key = "p",
 		mods = "ALT",
 		action = wezterm.action.SendString("pro\n"),
+	},
+	{
+		key = "o",
+		mods = "ALT",
+		action = wezterm.action.SendString("glo\n"),
 	},
 
 	{
