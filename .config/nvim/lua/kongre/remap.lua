@@ -77,3 +77,12 @@ vim.keymap.set("n", "^", "<C-^>", { desc = "Switch to alternate file" })
 
 -- Execute :Request command
 vim.keymap.set("n", "<leader>R", ":Request<CR>", { desc = "Open request.nvim" })
+
+-- Diagnostics in quickfix list
+vim.keymap.set("n", "<leader>dq", function()
+	vim.diagnostic.setqflist({ open = true })
+end, {
+	desc = "Diagnostics quickfix",
+	silent = true,
+	nowait = true,
+})
