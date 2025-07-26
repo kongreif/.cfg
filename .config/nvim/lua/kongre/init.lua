@@ -53,6 +53,10 @@ require("lazy").setup({
 			dependencies = { "nvim-lua/plenary.nvim" },
 		},
 		"nvim-lualine/lualine.nvim",
+		{
+			"stevearc/oil.nvim",
+			opts = {},
+		},
 
 		-- completion
 		{
