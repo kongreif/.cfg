@@ -47,14 +47,14 @@ config.keys = {
 	},
 	{
 		key = "t",
-		mods = "CTRL",
+		mods = "CTRL|SHIFT",
 		action = wezterm.action.SpawnCommandInNewTab({
 			cwd = wezterm.home_dir,
 		}),
 	},
 	{
 		key = "t",
-		mods = "CTRL|SHIFT",
+		mods = "ALT|SHIFT",
 		action = wezterm.action({ SpawnTab = "CurrentPaneDomain" }),
 	},
 	{
