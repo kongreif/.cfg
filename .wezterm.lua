@@ -15,12 +15,12 @@ end
 -- Format tab title to contain the path's directory and current process
 wezterm.on("format-tab-title", function(tab)
 	local cwd_uri = tab.active_pane.current_working_dir.path or ""
-	cwd_uri = string.match(cwd_uri, "[^/]+$")
+	cwd_uri = cwd_uri:match("([^/]+)$") or ""
 
-	local process = tab.active_pane.foreground_process_name
-	process = string.gsub(process, "^.*[/\\]+", "")
-	if not process or process == "" then
-		process = tab.active_pane.title
+	local process = tab.active_pane.foreground_process_name or ""
+	process = process:match("[^/\\]+$") -- strip any path
+	if process == "" then
+		process = tab.active_pane.title or ""
 	end
 
 	return string.format("%d: %s | %s", tab.tab_index + 1, cwd_uri, process)
@@ -98,24 +98,29 @@ config.keys = {
 	},
 	-- navigating through panes
 	{
-		key = "LeftArrow",
-		mods = "LEADER|SHIFT",
+		key = "h",
+		mods = "LEADER",
 		action = wezterm.action.ActivatePaneDirection("Left"),
 	},
 	{
-		key = "RightArrow",
-		mods = "LEADER|SHIFT",
+		key = "l",
+		mods = "LEADER",
 		action = wezterm.action.ActivatePaneDirection("Right"),
 	},
 	{
-		key = "UpArrow",
-		mods = "LEADER|SHIFT",
+		key = "k",
+		mods = "LEADER",
 		action = wezterm.action.ActivatePaneDirection("Up"),
 	},
 	{
-		key = "DownArrow",
-		mods = "LEADER|SHIFT",
+		key = "j",
+		mods = "LEADER",
 		action = wezterm.action.ActivatePaneDirection("Down"),
+	},
+	{
+		key = "z",
+		mods = "LEADER",
+		action = wezterm.action.TogglePaneZoomState,
 	},
 }
 
