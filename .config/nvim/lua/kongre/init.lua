@@ -162,7 +162,7 @@ require("lazy").setup({
 		-- Plugins in development
 		{
 			"kongreif/request.nvim",
-			dev = true,
+			dev = false,
 			config = function()
 				require("request")
 			end,

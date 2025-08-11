@@ -6,6 +6,18 @@ lint.linters_by_ft = {
 	javascript = { "eslint" },
 }
 
+local original_eslint_parser = lint.linters.eslint.parser
+
+-- Replace the parser with a wrapper that strips leading logs
+lint.linters.eslint.parser = function(output, bufnr)
+  -- Find where the JSON actually starts
+  local start = output:find("[%[]")
+  if start then
+    output = output:sub(start)
+  end
+  return original_eslint_parser(output, bufnr)
+end
+
 if vim.fn.executable("rubocop") == 1 then
 	lint.linters_by_ft.ruby = { "rubocop" }
 else
