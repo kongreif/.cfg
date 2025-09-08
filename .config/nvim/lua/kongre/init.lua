@@ -168,7 +168,7 @@ require("lazy").setup({
 			end,
 		},
 	},
-	checker = { enabled = true },
+	checker = { enabled = false },
 	dev = {
 		path = "~/code/neovim-plugins/",
 	},
