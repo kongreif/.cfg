@@ -69,9 +69,20 @@ require("lazy").setup({
 				-- keep it minimal; Blink ships good defaults
 				snippets = { preset = "luasnip" }, -- integrate with LuaSnip
 				sources = { default = { "lsp", "path", "buffer", "snippets" } },
+				completion = {
+					list = {
+						selection = {
+							preselect = false,
+							auto_insert = true,
+						},
+					},
+					documentation = {
+						auto_show = true,
+					},
+				},
 				keymap = {
 					preset = "default",
-					["<CR>"] = { "accept" },
+					["<CR>"] = { "accept", "fallback" },
 				},
 			},
 		},
