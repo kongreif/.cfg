@@ -127,6 +127,9 @@ require("lazy").setup({
 		{
 			"williamboman/mason.nvim",
 		},
+		{
+			"b0o/schemastore.nvim",
+		},
 
 		-- Linting
 		"mfussenegger/nvim-lint",

@@ -4,6 +4,8 @@ require("conform").setup({
 		ruby = { "rubocop" },
 		lua = { "stylua" },
 		vue = { "prettier" },
+		json = { "prettier" },
+		jsonc = { "prettier" },
 	},
 })
 
