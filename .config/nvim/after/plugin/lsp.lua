@@ -1,8 +1,7 @@
 require("mason").setup()
-local lspconfig = require("lspconfig")
 local capabilities = require("blink.cmp").get_lsp_capabilities()
 
-lspconfig.jsonls.setup({
+vim.lsp.config("jsonls", {
 	capabilities = capabilities,
 	filetypes = { "json", "jsonc" },
 	settings = {
@@ -14,7 +13,7 @@ lspconfig.jsonls.setup({
 	},
 })
 
-lspconfig.lua_ls.setup({
+vim.lsp.config("lua_ls", {
 	capabilities = capabilities,
 	settings = {
 		Lua = {
@@ -25,11 +24,11 @@ lspconfig.lua_ls.setup({
 	},
 })
 
-lspconfig.ruby_lsp.setup({
+vim.lsp.config("ruby_lsp", {
 	capabilities = capabilities,
 })
 
-lspconfig.gopls.setup({
+vim.lsp.config("gopls", {
 	settings = {
 		gopls = {
 			gofumpt = true, -- prefer stricter formatting
