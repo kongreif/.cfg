@@ -20,9 +20,10 @@ Set zsh as the default-shell for the current user
 ```shell-session
 chsh -s /bin/zsh
 ```
+
 3. Install OhmyZSH
 
-[Use the official installation guide](https://ohmyz.sh/#install)
+Use the [official installation guide](https://ohmyz.sh/#install)
 
 4. Install neovim
 
