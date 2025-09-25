@@ -28,3 +28,14 @@ lspconfig.lua_ls.setup({
 lspconfig.ruby_lsp.setup({
 	capabilities = capabilities,
 })
+
+lspconfig.gopls.setup({
+	settings = {
+		gopls = {
+			gofumpt = true, -- prefer stricter formatting
+			usePlaceholders = true,
+			analyses = { unusedparams = true, nilness = true, shadow = true },
+			staticcheck = true,
+		},
+	},
+})

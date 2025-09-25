@@ -6,6 +6,7 @@ require("conform").setup({
 		vue = { "prettier" },
 		json = { "prettier" },
 		jsonc = { "prettier" },
+		go = { "gofumpt" },
 	},
 })
 

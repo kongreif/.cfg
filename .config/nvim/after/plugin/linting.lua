@@ -4,6 +4,7 @@ lint.linters_by_ft = {
 	vue = { "eslint" },
 	typescript = { "eslint" },
 	javascript = { "eslint" },
+	go = { "golangcilint" },
 }
 
 local original_eslint_parser = lint.linters.eslint.parser
