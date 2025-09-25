@@ -83,3 +83,5 @@ end, {
 	silent = true,
 	nowait = true,
 })
+
+vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "LSP: go to definition" })
