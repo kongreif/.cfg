@@ -1,3 +1,3 @@
 require("oil").setup()
 
-vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent folder" })
+vim.keymap.set("n", "<C-k>", "<CMD>Oil<CR>", { desc = "Open parent folder" })
