@@ -77,9 +77,8 @@ yay ripgrep
 
 ## Install instructions Arch Linux
 
-1. `git clone git@github.com:kongrei/.cfg.git`
+1. `git clone git@github.com:kongreif/.cfg.git`
 1. `cd .cfg`
-1. `chmod +x arch-linux-install.sh`
 1. `chmod +x arch-linux-install.sh`
 
 ## Rails dev related setup
