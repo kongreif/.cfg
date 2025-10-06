@@ -38,3 +38,5 @@ vim.lsp.config("gopls", {
 		},
 	},
 })
+
+vim.lsp.enable({ "gopls", "lua_ls", "jsonls", "ruby_lsp" })
