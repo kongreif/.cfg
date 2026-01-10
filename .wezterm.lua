@@ -35,6 +35,9 @@ end)
 -- Color scheme
 config.color_scheme = "tokyonight_night"
 
+-- Font size
+config.font_size = 24.0
+
 -- Disable close confirmaion
 config.window_close_confirmation = "NeverPrompt"
 

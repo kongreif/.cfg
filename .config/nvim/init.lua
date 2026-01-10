@@ -1,1 +1,1 @@
-require("kongre")
+require("config")
