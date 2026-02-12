@@ -36,7 +36,7 @@ end)
 config.color_scheme = "tokyonight_night"
 
 -- Font size
-config.font_size = 24.0
+config.font_size = 16.0
 
 -- Disable close confirmaion
 config.window_close_confirmation = "NeverPrompt"
@@ -44,9 +44,16 @@ config.window_close_confirmation = "NeverPrompt"
 config.leader = { key = "b", mods = "CTRL", timeout_milliseconds = 2000 }
 config.keys = {
 	{
+		key = "Enter",
+		mods = "SHIFT",
+		action = wezterm.action.SendString("\x1b\r"),
+	},
+	{
 		key = "w",
 		mods = "CMD",
-		action = wezterm.action.CloseCurrentTab({ confirm = false }),
+		action = wezterm.action.CloseCurrentTab({
+			confirm = false,
+		}),
 	},
 	{
 		key = "t",

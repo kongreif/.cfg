@@ -96,7 +96,7 @@ export NVM_DIR="$HOME/.nvm"
 
 # --- ALIASES
 # Dotfiles via git
-alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+alias config='git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
 # Switch theme
 alias toggletheme='~/.toggle-theme.sh'
