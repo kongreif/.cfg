@@ -1,8 +1,10 @@
-local capabilities = require("blink.cmp").get_lsp_capabilities()
+vim.pack.add({
+	"https://github.com/neovim/nvim-lspconfig",
+})
+
 local schemastore = require("schemastore")
 
 vim.lsp.config("jsonls", {
-	capabilities = capabilities,
 	filetypes = { "json", "jsonc" },
 	settings = {
 		json = {
@@ -58,16 +60,17 @@ vim.lsp.config("lua_ls", {
 		})
 	end,
 	settings = {
-		Lua = {},
+		Lua = {
+			diagnostics = {
+				globals = { "vim", "P" },
+			},
+		},
 	},
 })
 
-vim.lsp.config("ruby_lsp", {
-	capabilities = capabilities,
-})
+vim.lsp.config("ruby_lsp", {})
 
 vim.lsp.config("gopls", {
-	capabilities = capabilities,
 	settings = {
 		gopls = {
 			gofumpt = true,

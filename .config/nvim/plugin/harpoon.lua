@@ -1,0 +1,25 @@
+vim.pack.add({
+	{ src = "https://github.com/ThePrimeagen/harpoon", version = "harpoon2" },
+})
+
+local harpoon = require("harpoon")
+harpoon:setup()
+
+vim.keymap.set("n", "<leader>a", function()
+	harpoon:list():add()
+end, { desc = "Harpoon: Add file" })
+vim.keymap.set("n", "<C-e>", function()
+	harpoon.ui:toggle_quick_menu(harpoon:list())
+end, { desc = "Harpoon: Show menu" })
+vim.keymap.set("n", "<C-1>", function()
+	harpoon:list():select(1)
+end, { desc = "Harpoon: Select 1st file" })
+vim.keymap.set("n", "<C-2>", function()
+	harpoon:list():select(2)
+end, { desc = "Harpoon: Select 2nd file" })
+vim.keymap.set("n", "<C-3>", function()
+	harpoon:list():select(3)
+end, { desc = "Harpoon: Select 3rd file" })
+vim.keymap.set("n", "<C-4>", function()
+	harpoon:list():select(4)
+end, { desc = "Harpoon: Select 4th file" })

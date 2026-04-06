@@ -4,7 +4,7 @@ vim.g.mapleader = " "
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", { desc = "Move selected lines down" })
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", { desc = "Move selected lines up" })
 
--- Center screen when half page up or down
+-- Center screen when moving half page up or down
 vim.keymap.set("n", "<C-d>", "<C-d>zz", { desc = "Half page and center" })
 vim.keymap.set("n", "<C-u>", "<C-u>zz", { desc = "Half page and center" })
 
@@ -83,5 +83,3 @@ end, {
 	silent = true,
 	nowait = true,
 })
-
-vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "LSP: go to definition" })
