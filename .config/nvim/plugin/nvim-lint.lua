@@ -4,6 +4,10 @@ vim.pack.add({
 
 local lint = require("lint")
 
+local rubocop = lint.linters.rubocop
+rubocop.cmd = "bundle"
+rubocop.args = vim.list_extend({ "exec", "rubocop" }, rubocop.args)
+
 lint.linters_by_ft = {
 	ruby = { "rubocop" },
 	vue = { "eslint" },

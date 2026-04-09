@@ -3,6 +3,12 @@ vim.pack.add({
 })
 
 require("conform").setup({
+	formatters = {
+		rubocop = {
+			command = "bundle",
+			prepend_args = { "exec", "rubocop" },
+		},
+	},
 	formatters_by_ft = {
 		javascript = { "prettier" },
 		ruby = { "rubocop" },

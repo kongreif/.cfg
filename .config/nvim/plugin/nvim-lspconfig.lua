@@ -82,3 +82,5 @@ vim.lsp.config("gopls", {
 })
 
 vim.lsp.enable({ "gopls", "lua_ls", "jsonls", "ruby_lsp" })
+
+vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "Go to definition" })
