@@ -7,6 +7,7 @@ local ensure_installed = {
 	"css",
 	"gitignore",
 	"go",
+	"javascript",
 	"json",
 	"jsonc",
 	"lua",
