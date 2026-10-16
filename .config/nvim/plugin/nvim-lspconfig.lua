@@ -81,6 +81,8 @@ vim.lsp.config("gopls", {
 	},
 })
 
-vim.lsp.enable({ "gopls", "lua_ls", "jsonls", "ruby_lsp" })
+vim.lsp.config("rust_analyzer", {})
+
+vim.lsp.enable({ "gopls", "lua_ls", "jsonls", "ruby_lsp", "rust_analyzer" })
 
 vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "Go to definition" })

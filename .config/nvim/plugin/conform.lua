@@ -17,6 +17,7 @@ require("conform").setup({
 		json = { "prettier" },
 		jsonc = { "prettier" },
 		go = { "gofumpt" },
+		rust = { "rustfmt" },
 	},
 	format_on_save = { lsp_fallback = true },
 })

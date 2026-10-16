@@ -14,17 +14,16 @@ local ensure_installed = {
 	"markdown",
 	"markdown_inline",
 	"ruby",
+	"rust",
 	"typescript",
 	"vue",
 }
 
-require("nvim-treesitter").setup({
-	ensure_installed = ensure_installed,
-})
+require("nvim-treesitter").install(ensure_installed)
 
 vim.api.nvim_create_autocmd("FileType", {
 	pattern = ensure_installed,
 	callback = function()
-		vim.treesitter.start()
+		pcall(vim.treesitter.start)
 	end,
 })
