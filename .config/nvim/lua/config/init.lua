@@ -1,5 +1,0 @@
-require("config.set")
-require("config.remap")
-require("config.globals")
-require("config.dev")
-require("config.custom.terminal")
